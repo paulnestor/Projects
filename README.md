@@ -1,32 +1,16 @@
-# Projects
+# DOSAGE CALCULATOR
 
-Video Demo: https://youtu.be/W66XacPU03g
+#### Video Demo: https://youtu.be/CWodV_M-3T0
 
-Description:
-The idea behind my final project is a virtual assistant that can provide personalized recommendations of over-the-counter solutions for some health concerns like the flu, smoking cessation and solar burn, based on some informations the users are asked to provide. The app.py file contains code that directs users to the pages related to the health concern that they want to know about and also allows the users to navegate between the HTML pages that have the informations (medicines and non-pharmacological measures) related to the previously chosen health concern.
+#### Description:
+I work as a pharmacist in Portugal and one thing we frequently do in my job is to validate the prescription of certain drugs prescribed by physicians. With this project, I decided to creat an easier, faster and safer way of doing that so we don't have to do it manually.
 
-Inside the templates folder is possibile to find:
+The dosage is calculated according to the age and/or weight of the child (specific for each medicine), so the first thing the program does is receive input from the user regarding the child's age and weight. If the child is 12 or more years old, the program will exit, using sys.exit and displaying the message that the child should already be taking pills and not syrup. The exact same thing happens if the child is more than 40kg because, in that case, pills, and not syrups, should be used.
+If the child is less than 12 years and less than 40kg, the program will display a list of drugs (some of the most prescribed) and will prompt the user to choose which medicine was prescribed.
 
-layout.html: contains the HTML code of the layout of the project as well as the link to the libraries (bootstrap) and the css stylesheet (available inside the static folder), responsabile for the desing of the project.
+After that, the program will verify if the input corresponds to one of the medicines on the list. If the medicine is not on the list, the program will raise a ValueError explaining that the user needs to choose one of the drugs that are part of the list.
+If the chosen drug is penicillin (in this case, the two first medicines on the list), the program will ask the user if the person who received this prescription is allergic to penicillin. This is something we, as pharmacists, do every time we have a prescription for penicillin since the person can have a severe allergic reaction if they take this substance and are allergic to it. If the answer is affirmative the program will exit with sys.exit, displaying the message that the physician should be consulted since the person cannot take the medicine prescribed. If the person is not allergic the program will continue by calculating the minimum, maximum and medium dosages of the medicine that could be taken every 12h. In the specif case of Clavamox DT and Clamoxyl that is a range of dosages that can be used according to the severity of the infection. So, having the minimum, medium and maximum dosages will help the pharmacist understand if the dosage prescribed is valid for a child of that specific weight and will also help understand the severity of the infection.
+If the drug prescribed is klacid, the program will use the child's weight to calculate the correct dosage to administrate every 12h. If the drug prescribed is ben-u-ron, the program will use the child's weight to calculate the minimum and maximum dosages that could be taken by the child. In this case, the minimum dosage is the amount that can be taken every 6h and the maximum dosage the amount that can be taken every 8h. If the medicine prescribed is aerius the dosage is calculated using the child's age.
 
-index.html: contains a brief descripton of the project's aim and allows the users to choose the health concern they are interested in knowing more information about.
-
-symptoms.html: presents a list of some of the most common flu symptoms, allowig the users to select the symptoms that they have in order to give information about the medicines that they could take to treat those symptoms.
-
-apology.html: this page renders an apology if the users don't pick any symptoms from the given list in the index.html page, explaining they must choose some symptom from the list.
-
-medicine.html: presents a table with the symptoms previously chosen at the symptoms.html page. The table has three columns: the symptoms column, the medicine column, that has the group of medicines used to treat the respective symptom, and the contraindications column, that has a list of the contraindications of that specific medicine, alerting the users who suffer from those contraindications to not take that medicine before talking to their physician or pharmacist. At the end of the page the users can find a button that will redirect them to the page of the non-pharmacological measures.
-
-measures.html: contains a list of some of the most important non-pharmacological measures that are essencial for a faster recovery.
-
-smoking_cessation.html: this page contains information of some options of Nicotine Replacement Therapy, alongside with information on how to take or apply them. It is also possible to find a button that will direct the users to the correct dosage to take according to the number of cigarettes they smoke a day (more or less than 20 cigarettes).
-
-dosage_more.html: the users will find information about the correct dosage to take of every option presented in the smoking_cessation.html page, if they smoke more than 20 cigarettes a day.
-
-dosage_less.html: the users will find information about the correct dosage to take of every option presented in the smoking_cessation.html page, if they smoke less than 20 cigarettes a day.
-
-measures_smoking.html: from the dosage_more.html and dosage_less.html pages, the users will be able to go to the non-pharmacological measures page. In this page they will find measures that taken alongside the use of Nicotine Replacement Therapy will highly increase their chances of breaking this habit and quit smoking.
-
-solar_burn.html: the solar_burn.html page presents a table with the medicines the users should take according to the symptoms they have developed after the solar burn. As happens with the others health concerns, there will be a button allowing the users to look up some non-pharmacological measures.
-
-measures_solarburn.html: in this page the users will find some non-pharmacological measures used in solar burns to make the recovery faster.
+After that, the program will display the major side effects and major contraindications of the prescribed medicine. That is done by using the csv DictReader of the csv module, which reads a csv file previously created called medicines.csv and appends to two different empty lists a dictionary containing the name of the medicine and the major side effects or the name of the medicine and the major contraindications. The program will only print the side effects and contraindications of the drug previously chosen from the list.
+If the chosen drug from the list is Clavamox DT, the program will also display a message reminding the user that this particular antibiotic needs to be stored in the fridge after being prepared.
