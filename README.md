@@ -1,6 +1,7 @@
 # Projects
 
 Video Demo: https://youtu.be/W66XacPU03g
+
 Description:
 The idea behind my final project is a virtual assistant that can provide personalized recommendations of over-the-counter solutions for some health concerns like the flu, smoking cessation and solar burn, based on some informations the users are asked to provide. The app.py file contains code that directs users to the pages related to the health concern that they want to know about and also allows the users to navegate between the HTML pages that have the informations (medicines and non-pharmacological measures) related to the previously chosen health concern.
 
