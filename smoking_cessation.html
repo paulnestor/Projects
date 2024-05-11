@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <div class="div">
+        <br><br><br><br>
+        <h5>
+            Options of Nicotine Replacement Therapy (releasing of nicotine into your body to help ease cravings):
+        </h5>
+        <br>
+        <table>
+            <tr>
+                <th scope="col" class="table-primary">Options</th>
+                <th scope="col" class="table-primary">How to use</th>
+            </tr>
+            <tr>
+                <td class="table-light">Gums</td>
+                <td> Chew one piece of gum until the <b>taste becomes strong.</b> Rest the piece of nicotine gum <b>between your
+                     gum and cheek</b> and wait for the taste to fade. When the taste has faded, start to chew the gum
+                     again. Repeat the process for up to half an hour.
+                </td>
+            </tr>
+            <tr>
+                <td class="table-light">Microtab</td>
+                <td>Place <b>under your tongue and let the tab dissolve</b> over a period of 30 minutes. Do not chew or swallow.</td>
+            </tr>
+            <tr>
+                <td class="table-light">Patchs</td>
+                <td>You should aply your patch on your <b>upper arm, hip, or front or side of your chest</b> (alternate the area each day).
+                    Carefully apply the sticky side to your chosen area and press the patch onto your skin with the palm of your
+                    hand or fingertips. <b>After 16 or 24 hours</b> of wear (depending on the brand of the product), remove the patch.
+                </td>
+            </tr>
+        </table>
+        <br>
+        <form action="smoking_cessation" method="post">
+            <label for="smoking">How many cigarettes do you smoke:</label>
+
+            <select name="smoking">
+                <option value="more">I smoke 20 or more cigarrettes a day</option>
+                <option value="less">I smoke less than 20 cigarettes a day</option>
+            </select><br><br>
+            <button class="btn btn-outline-primary btn-lg" type="submit">Search dosage</button>
+        </form>
+        <a href="{{ url_for('index') }}">
+            <button id="homepage" class="btn btn-outline-primary btn-sm">Homepage</button>
+        </a>
+    </div>
+{% endblock %}

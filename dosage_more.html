@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <div class="div">
+        <br><br><br>
+        <table>
+            <tr>
+                <th scope="col" class="table-primary">Options</th>
+                <th scope="col" class="table-primary">Dosage</th>
+            </tr>
+            <tr>
+                <td class="table-light">Gums</td>
+                <td><b>Start with the 4mg gums.</b> Do not use more than <b>15 pieces a day.</b> You can replace some cigarettes
+                    with the gums to help cut down the number you smoke each day, before you try to quit smoking
+                    completely.
+                </td>
+            </tr>
+            <tr>
+                <td class="table-light">Microtab</td>
+                <td>You can start with <b>2 microtabs each hour</b>, taking up to <b>16 to 24 per day</b> (do not exceed 40 microtabs per day).
+                    The total treatment <b>should not exceed 9 months in total.</b> You can replace some cigarettes
+                    with the microtabs to help cut down the number you smoke each day, before you try to quit smoking
+                    completely.
+                </td>
+            </tr>
+            <tr>
+                <td class="table-light">Patchs</td>
+                <td>Week 1-8 - <b>Step 1:</b> 25mg patch. Week 9-10 - <b>Step 2:</b> 15mg patch. Week 11-12 - <b>Step 3:</b> 10mg patch.
+                </td>
+            </tr>
+        </table>
+        <br><br><br>
+        <a href="{{ url_for('measures_smoking') }}">
+            <button id="button" class="btn btn-outline-primary btn-lg">Non-Pharmacological Measures</button>
+        </a>
+        <a href="{{ url_for('index') }}">
+            <button id="homepage" class="btn btn-outline-primary btn-sm">Homepage</button>
+        </a>
+    </div>
+{% endblock %}
