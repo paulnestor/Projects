@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <div class="div">
+        <br> <br>
+        <p>In case of a solar burn you can use the following medicines according to your symptoms:</p>
+        <table>
+            <tr>
+                <th scope="col" class="table-primary">Symptoms</th>
+                <th scope="col" class="table-primary">Medicine</th>
+            </tr>
+            <tr>
+                <td class="table-light">Itching</td>
+                <td>Topical antihistamines</td>
+            </tr>
+            <tr>
+                <td class="table-light">Pain</td>
+                <td>Painkiller</td>
+            </tr>
+            <tr>
+                <td class="table-light">Inflamation (red and hot skin)</td>
+                <td>Topical corticosteroids</td>
+            </tr>
+            <tr>
+                <td class="table-light">Skin wound</td>
+                <td>Healing ointment</td>
+            </tr>
+        </table>
+        <br> <br>
+        <a href="{{ url_for('measures_solarburn') }}">
+            <button id="button" class="btn btn-outline-primary btn-lg">Non-Pharmacological Measures</button>
+        </a>
+        <a href="{{ url_for('index') }}">
+            <button id="homepage" class="btn btn-outline-primary btn-sm">Homepage</button>
+        </a>
+    </div>
+{% endblock %}

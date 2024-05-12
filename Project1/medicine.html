@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <div class="div">
+        <br><br><br><br>
+        <table>
+            <tr>
+                <th scope="col" class="table-primary">Symptom</th>
+                <th scope="col" class="table-primary">Medicine</th>
+                <th scope="col" class="table-primary">Contraindications</th>
+            </tr>
+            {% for list in final_list %}
+                <tr>
+                    <td class="table-light">{{ list["symptom"] }}</td>
+                    <td class="table-light">{{ list["medicine"] }}</td>
+                    <td class="table-light">{{ list["contraindications"] }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+        <br> <br>
+        <p id="contraindications"> <b>Consult your physician or pharmacist if you suffer from <br> any of the contraindications presented on the table!</b></p>
+        <br>
+        <a href="{{ url_for('measures') }}">
+            <button id="button" class="btn btn-outline-primary btn-lg">Non-Pharmacological Measures</button>
+        </a>
+        <a href="{{ url_for('index') }}">
+            <button id="homepage" class="btn btn-outline-primary btn-sm">Homepage</button>
+        </a>
+    </div>
+{% endblock %}
+

@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <div class="div">
+        <br><br><br>
+        <p>Some important <b>non-pharmacological measures</b> are:</p><br>
+        <ul>
+            <li>Apply <b>cold water compresses</b> on the affected area</li><br>
+            <li>Apply products to <b>hydrate and regenerate</b> the skin</li><br>
+            <li><b>Don't burst</b> the vesicles, because it <b>increases the risk of infection</b></li><br>
+            <li>Drink more <b>liquids</b></li><br>
+            <li>Don't forget <b>sun protection measures</b> in order to avoid future solar burns</li>
+        </ul>
+        <a href="{{ url_for('index') }}">
+            <button id="homepage" class="btn btn-outline-primary btn-sm">Homepage</button>
+        </a>
+    </div>
+{% endblock %}
